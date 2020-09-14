@@ -29,7 +29,7 @@ class _LeftDrawerWidgetState extends State<LeftDrawerWidget> {
               )
             ],
             decoration: BoxDecoration(
-              color: Colors.cyan,
+              color: Colors.blueGrey[300],
             ),
           ),
           MenuListTileWidget(),

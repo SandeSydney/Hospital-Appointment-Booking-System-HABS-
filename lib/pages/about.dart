@@ -5,6 +5,7 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey.shade100,
       appBar: AppBar(
         title: Text('About Us'),
       ),
@@ -15,7 +16,7 @@ class About extends StatelessWidget {
             'About Page',
             softWrap: true,
           ),
-       ),
+        ),
       ),
     );
   }

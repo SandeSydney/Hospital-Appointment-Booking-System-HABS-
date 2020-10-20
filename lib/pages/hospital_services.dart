@@ -48,6 +48,26 @@ class HospitalServices extends StatelessWidget {
             icon: Icons.airline_seat_flat,
             titleText: 'Physiotherapy',
           ),
+          HospitalServiceList(
+            icon: Icons.airline_seat_flat,
+            titleText: 'Diabetics Clinic',
+          ),
+          HospitalServiceList(
+            icon: Icons.airline_seat_flat,
+            titleText: 'Magnetic Resonance Imaging (MRI)',
+          ),
+          HospitalServiceList(
+            icon: Icons.airline_seat_flat,
+            titleText: 'HIV Testing and Counselling',
+          ),
+          HospitalServiceList(
+            icon: Icons.airline_seat_flat,
+            titleText: 'Ante-Natal Clinic (ANC)',
+          ),
+          HospitalServiceList(
+            icon: Icons.airline_seat_flat,
+            titleText: 'Post Natal Clinic',
+          ),
         ],
       ),
     );

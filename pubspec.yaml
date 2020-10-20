@@ -1,5 +1,6 @@
 name: habs
-description: This application provides a platform for patients to book appointments in Kitale District Hospital. Threfore, the application encompasses of two user interfaces, that of the patients and that of the doctor.
+description: This application provides a platform for patients to book appointments in Kitale District Hospital.
+  Threfore, the application encompasses of two user interfaces, that of the patients and that of the doctor.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -15,6 +16,8 @@ dependencies:
   cupertino_icons: ^0.1.3
 
   font_awesome_flutter: ^8.8.1
+
+  email_launcher: ^1.0.0
 
 dev_dependencies:
   flutter_test:

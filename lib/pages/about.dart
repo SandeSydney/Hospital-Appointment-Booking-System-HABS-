@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:email_launcher/email_launcher.dart';
 
 // constants for the normal text
 const textNormal = TextStyle(

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1066100162072",
+    "firebase_url": "https://habs-d15d3.firebaseio.com",
+    "project_id": "habs-d15d3",
+    "storage_bucket": "habs-d15d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066100162072:android:7a7512e44b63fcbb194d6d",
+        "android_client_info": {
+          "package_name": "com.sande.habs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066100162072-2vna0htu7tr3d7fvalsjv09fgk00dfnl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD48tioIWydvfoARfOs2MDydvKQlmMPsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066100162072-2vna0htu7tr3d7fvalsjv09fgk00dfnl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

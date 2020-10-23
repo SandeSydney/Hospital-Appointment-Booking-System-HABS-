@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:habs/widgets/menu_list_tile.dart';
@@ -20,8 +21,7 @@ class _LeftDrawerWidgetState extends State<LeftDrawerWidget> {
               size: 48.0,
               color: Colors.white,
             ),
-            accountName: Text('Sande Sydney'),
-            accountEmail: Text('sandesydney01@gmail.com'),
+            accountEmail: Text(FirebaseAuth.instance.currentUser.email),
             otherAccountsPictures: <Widget>[
               Icon(
                 Icons.bookmark_border,

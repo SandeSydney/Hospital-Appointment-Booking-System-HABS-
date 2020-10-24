@@ -26,46 +26,89 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
       body: ModalProgressHUD(
         inAsyncCall: _showProgress,
-        child: Form(
-          // implement key
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              // Implement fields
-              TextFormField(
-                // ignore: missing_return
-                validator: (input) {
-                  if (input.isEmpty) {
-                    return 'Please enter email!';
-                  }
-                },
-                onSaved: (input) => _email = input,
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                ),
-              ),
-              TextFormField(
-                // ignore: missing_return
-                validator: (input) {
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Form(
+            // implement key
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                // Implement fields
+                TextFormField(
                   // ignore: missing_return
-                  if (input.length < 6) {
-                    return 'Your password should be at least 6 characters!';
-                  }
-                },
-                onSaved: (input) => _password = input,
-                decoration: InputDecoration(
-                  labelText: 'Password',
+                  validator: (input) {
+                    if (input.isEmpty) {
+                      return 'Please enter email!';
+                    }
+                  },
+                  onSaved: (input) => _email = input,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blueGrey.shade200,
+                      ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(30.0),
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blueGrey.shade200,
+                      ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(30.0),
+                      ),
+                    ),
+                    labelText: 'Email',
+                    prefixIcon: Icon(Icons.email),
+                  ),
                 ),
-                obscureText: true,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  register();
-                },
-                child: Text('Register'),
-              )
-            ],
+                SizedBox(
+                  height: 15.0,
+                ),
+                TextFormField(
+                  // ignore: missing_return
+                  validator: (input) {
+                    // ignore: missing_return
+                    if (input.length < 6) {
+                      return 'Your password should be at least 6 characters!';
+                    }
+                  },
+                  onSaved: (input) => _password = input,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blueGrey.shade200,
+                      ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(30.0),
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blueGrey.shade200,
+                      ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(30.0),
+                      ),
+                    ),
+                    labelText: 'Password',
+                    prefixIcon: Icon(Icons.lock),
+                  ),
+                  obscureText: true,
+                ),
+                SizedBox(
+                  height: 15.0,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    register();
+                  },
+                  child: Text('Register'),
+                )
+              ],
+            ),
           ),
         ),
       ),

@@ -26,49 +26,90 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: ModalProgressHUD(
         inAsyncCall: _showProgress,
-        child: Form(
-          // implement key
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              // Implement fields
-              TextFormField(
-                autocorrect: false,
-                // ignore: missing_return
-                validator: (input) {
-                  if (input.isEmpty) {
-                    return 'Please enter email!';
-                  }
-                },
-                onSaved: (input) => _email = input,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email),
-                  labelText: 'Email',
-                ),
-              ),
-              TextFormField(
-                // ignore: missing_return
-                validator: (input) {
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Form(
+            // implement key
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                // Implement fields
+                TextFormField(
+                  autocorrect: false,
                   // ignore: missing_return
-                  if (input.length < 6) {
-                    return 'Your password should be at least 6 characters!';
-                  }
-                },
-                onSaved: (input) => _password = input,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.lock),
-                  labelText: 'Password',
+                  validator: (input) {
+                    if (input.isEmpty) {
+                      return 'Please enter email!';
+                    }
+                  },
+                  onSaved: (input) => _email = input,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blueGrey.shade200,
+                      ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(30.0),
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blueGrey.shade200,
+                      ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(30.0),
+                      ),
+                    ),
+                    prefixIcon: Icon(Icons.email),
+                    labelText: 'Email',
+                  ),
                 ),
-                obscureText: true,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  logIn();
-                },
-                child: Text('Log In'),
-              )
-            ],
+                SizedBox(
+                  height: 15.0,
+                ),
+                TextFormField(
+                  // ignore: missing_return
+                  validator: (input) {
+                    // ignore: missing_return
+                    if (input.length < 6) {
+                      return 'Your password should be at least 6 characters!';
+                    }
+                  },
+                  onSaved: (input) => _password = input,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blueGrey.shade200,
+                      ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(30.0),
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blueGrey.shade200,
+                      ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(30.0),
+                      ),
+                    ),
+                    prefixIcon: Icon(Icons.lock),
+                    labelText: 'Password',
+                  ),
+                  obscureText: true,
+                ),
+                SizedBox(
+                  height: 15.0,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    logIn();
+                  },
+                  child: Text('Log In'),
+                )
+              ],
+            ),
           ),
         ),
       ),

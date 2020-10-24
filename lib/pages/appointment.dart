@@ -12,7 +12,7 @@ class _AppointmentsState extends State<Appointments> {
 
   // variables to hold data to be collected from the form
   String _userName, _email, _phoneNumber;
-  DateTime _appDate, _appStartTime, _appLastTime;
+  String _appDate, _appStartTime, _appLastTime;
 
   @override
   Widget build(BuildContext context) {
@@ -120,14 +120,53 @@ class _AppointmentsState extends State<Appointments> {
                 height: 10,
               ),
               DateTimePicker(
-                type: DateTimePickerType.dateTimeSeparate,
+                type: DateTimePickerType.date,
                 dateMask: 'd MMM, yyyy',
                 initialValue: DateTime.now().toString(),
                 firstDate: DateTime(2000),
                 lastDate: DateTime(2100),
-                dateLabelText: 'Date',
-                timeLabelText: 'Hour',
                 icon: Icon(Icons.event),
+                onChanged: (value) => _appDate = value,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.blueGrey.shade200,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.blueGrey.shade200,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                  ),
+                  prefixIcon: Icon(Icons.event),
+                  labelText: 'Appointment Date',
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Cancel'),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.red),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Submit'),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.green),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

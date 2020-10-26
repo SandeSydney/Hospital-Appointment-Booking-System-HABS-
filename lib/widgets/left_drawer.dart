@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:habs/widgets/menu_list_tile.dart';
@@ -17,20 +16,12 @@ class _LeftDrawerWidgetState extends State<LeftDrawerWidget> {
         children: <Widget>[
           UserAccountsDrawerHeader(
             currentAccountPicture: Icon(
-              Icons.face,
-              size: 48.0,
+              Icons.person,
+              size: 80.0,
               color: Colors.white,
             ),
-            accountEmail: Text(FirebaseAuth.instance.currentUser.email),
-            otherAccountsPictures: <Widget>[
-              Icon(
-                Icons.bookmark_border,
-                color: Colors.white,
-              )
-            ],
-            decoration: BoxDecoration(
-              color: Colors.blueGrey[300],
-            ),
+            accountEmail: null,
+            accountName: null,
           ),
           MenuListTileWidget(),
         ],

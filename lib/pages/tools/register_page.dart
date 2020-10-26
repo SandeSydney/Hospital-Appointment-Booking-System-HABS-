@@ -36,6 +36,7 @@ class _RegisterPageState extends State<RegisterPage> {
               children: <Widget>[
                 // Implement fields
                 TextFormField(
+                  keyboardType: TextInputType.emailAddress,
                   // ignore: missing_return
                   validator: (input) {
                     if (input.isEmpty) {

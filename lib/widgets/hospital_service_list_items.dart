@@ -13,7 +13,7 @@ class HospitalServiceList extends StatelessWidget {
       contentPadding: EdgeInsets.all(8.0),
       leading: Icon(
         icon,
-        size: 60.0,
+        size: 40.0,
       ),
       title: Text(titleText),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:habs/widgets/hospital_service_list_items.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // this class lists the services that are offered at the hospital
 class HospitalServices extends StatelessWidget {
@@ -13,7 +14,7 @@ class HospitalServices extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: FontAwesomeIcons.ambulance,
             titleText: 'Ambulance Services',
           ),
           HospitalServiceList(
@@ -21,51 +22,51 @@ class HospitalServices extends StatelessWidget {
             titleText: 'Ward Facilities',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: FontAwesomeIcons.userNurse,
             titleText: 'Nursing',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: Icons.medical_services,
             titleText: 'Out-Patient Department',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: Icons.local_pharmacy,
             titleText: 'Pharmacy and Diagnosis',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: FontAwesomeIcons.flask,
             titleText: 'Laboratory',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: FontAwesomeIcons.xRay,
             titleText: 'X-Ray',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: FontAwesomeIcons.disease,
             titleText: 'Radiotherapy',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: Icons.wheelchair_pickup,
             titleText: 'Physiotherapy',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: FontAwesomeIcons.clinicMedical,
             titleText: 'Diabetics Clinic',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: FontAwesomeIcons.biohazard,
             titleText: 'Magnetic Resonance Imaging (MRI)',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: FontAwesomeIcons.vials,
             titleText: 'HIV Testing and Counselling',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: Icons.pregnant_woman,
             titleText: 'Ante-Natal Clinic (ANC)',
           ),
           HospitalServiceList(
-            icon: Icons.airline_seat_flat,
+            icon: Icons.child_care,
             titleText: 'Post Natal Clinic',
           ),
         ],

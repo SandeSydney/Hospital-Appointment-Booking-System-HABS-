@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:habs/Authentication/authentication_service.dart';
 import 'package:habs/pages/home.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -36,6 +38,7 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 // Implement fields
                 TextFormField(
+                  keyboardType: TextInputType.emailAddress,
                   autocorrect: false,
                   // ignore: missing_return
                   validator: (input) {
@@ -104,7 +107,18 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    logIn();
+                    // call the authentication service using provider
+                    context.read<AuthenticationService>().signIn(
+                          email: _email,
+                          password: _password,
+                        );
+                    // Navigate to home page
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Home(),
+                      ),
+                    );
                   },
                   child: Text('Log In'),
                 )
@@ -114,37 +128,5 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
-
-  // method to login into the application
-  Future<void> logIn() async {
-    // validate fields
-    // key in the current state
-    final formState = _formKey.currentState;
-    if (formState.validate()) {
-      // save the form data into the variables
-      formState.save();
-      // login to firebase
-      try {
-        await FirebaseAuth.instance
-            .signInWithEmailAndPassword(email: _email, password: _password);
-
-        // Navigate to home page
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Home(),
-          ),
-        );
-        // show the progress indicator
-        setState(() {
-          // show the progress indicator once the Register button has been clicked.
-          _showProgress = true;
-        });
-      } catch (e) {
-        // print the error message
-        print(e.message);
-      }
-    }
   }
 }
